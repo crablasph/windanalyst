@@ -1,0 +1,36 @@
+2/15/2016: version 2.0.3 wgrib2
+   make using cygwin 1.7.7-1 software on 64 bit Windows 7
+   includes IPOLATES
+   made with Netcdf3
+7/9/2012: version 1.9.8 wgrib2
+   make using cygwin 1.7.7-1 software on 64 bit Windows 7
+   includes IPOLATES
+   made with Netcdf4
+   needs 4 dll files, new: cyggomp-1.dll
+1/31/2012: version 1.9.5 wgrib2
+   make using cygwin 1.7.7-1 software
+9/12/2011:
+   version 1.9.4 wgrib2
+   make using cygwin 1.7.7-1 software
+     include the IPOLATE (-new_grid) option
+2/8/2011:
+   version 1.9.1 wgrib2
+   make using cygwin 1.7.7-1 software
+     include the IPOLATE (-new_grid) option
+5/21/2010:
+   copied wgrib2.exe.v1.8.4 to wgrib2.exe
+      note: v1.8.4 testing is identical to v1.8.4
+   tested on 64-bit windows7 and windows XP (32-bit)
+   NOTE: the required .dll files have changed
+
+9/24/2009
+   version 0.1.8.1 (9/2009)
+   To compile, I used cygwin's jasper libraries.
+
+Includes: netcdf, match, tigge
+
+status: compiled with cygwin, very minor testing
+
+---
+v0.1.5f reported to work with Vista
+0.1.7.7d (7/2008) worked with Vista Home (32 bits)
