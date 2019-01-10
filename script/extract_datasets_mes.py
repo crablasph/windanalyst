@@ -21,7 +21,7 @@ arcpy.AddMessage(mess)
 print(arcpy.GetMessage(message_count - 1))
 print mess
 
-inPath = arcpy.GetParameter(0) or "C:\\datos_\\201408" #dirpath+"\\test_data\\GFS\\201808"
+inPath = arcpy.GetParameter(0) or "C:\\windanalyst\\data\\09012019191354\\201808" 
 ouPath = arcpy.GetParameter(1) or inPath
 match = arcpy.GetParameter(2) or "10 m above ground"
 delete = arcpy.GetParameter(3) or True
@@ -34,32 +34,38 @@ else:
     Sistema_de_coordenadas_de_salida2 = str(Sistema_de_coordenadas_de_salida)
 zone = arcpy.GetParameterAsText(5)
 if zone == '#' or not zone:
-    zone =  dirpath+"\\test_data\\limites.gdb\\valle_del_cauca_gribprj" # provide a default value if unspecified
+    zone =  "C:\\windanalyst\\data\\zone.gdb\\palmira" # provide a default value if unspecified
 
 bbox = arcpy.GetParameterAsText(6)
 if bbox == '#' or not bbox:
-    bbox = "-77,559915347 3,06125006400003 -75,706445991 4,97306657200005" # provide a default value if unspecified
+    bbox = "-8517538.459500 414133.688800 -8457878.461800 383239.996000" # provide a default value if unspecified
 
-cell = arcpy.GetParameterAsText(7)
-if cell == '#' or not cell:
-    cell = "12,5783269625889 12,5783269625889" # provide a default value if unspecified
+##cell = arcpy.GetParameterAsText(7)
+##if cell == '#' or not cell:
+##    cell = "12,5783269625889 12,5783269625889" # provide a default value if unspecified
+##
+vel = arcpy.GetParameter(7) or False
 
-vel = arcpy.GetParameter(8) or False
+##angle = arcpy.GetParameterAsText(9)
+##if angle == '#' or not angle:
+##    angle = "20" # provide a default value if unspecified
+##
+##aspect = arcpy.GetParameterAsText(10)
+##if aspect == '#' or not aspect:
+##    aspect =  dirpath+"\\dem\\clip_dem.gdb\\Aspect_Selected_Resample" # provide a default value if unspecified
+##
+##statChoose = arcpy.GetParameterAsText(11)
+##if statChoose  == '#' or not statChoose :
+##    statChoose  = "MAJORITY" # provide a default value if unspecified
 
-angle = arcpy.GetParameterAsText(9)
-if angle == '#' or not angle:
-    angle = "20" # provide a default value if unspecified
-
-aspect = arcpy.GetParameterAsText(10)
-if aspect == '#' or not aspect:
-    aspect =  dirpath+"\\dem\\clip_dem.gdb\\Aspect_Selected_Resample" # provide a default value if unspecified
-
-statChoose = arcpy.GetParameterAsText(11)
-if statChoose  == '#' or not statChoose :
-    statChoose  = "MAJORITY" # provide a default value if unspecified
+exc = arcpy.GetParameterAsText(8)
+if exc  == '#' or not exc :
+    exc  = "C:\windanalyst\script\exclude.txt" # provide a default value if unspecified
 
 
-exclude = []
+
+text_file = open(exc, "r")
+exclude = text_file.read().split(',')
 #exclude = arcpy.GetParameterAsText(13) or []
 #if exclude == '#' or not exclude:
 #    exclude = [] # provide a default value if unspecified
@@ -113,25 +119,25 @@ arcpy.AddMessage(mess)
 print(arcpy.GetMessage(message_count - 1))
 print mess
 
-mess = "Celda Salida: "+str(cell)
-arcpy.AddMessage(mess)
-print(arcpy.GetMessage(message_count - 1))
-print mess
+##mess = "Celda Salida: "+str(cell)
+##arcpy.AddMessage(mess)
+##print(arcpy.GetMessage(message_count - 1))
+##print mess
 
 mess = "Calcular Velocidad: "+str(vel)
 arcpy.AddMessage(mess)
 print(arcpy.GetMessage(message_count - 1))
 print mess
 
-mess = "Angulo Maximo: "+str(angle)
-arcpy.AddMessage(mess)
-print(arcpy.GetMessage(message_count - 1))
-print mess
+##mess = "Angulo Maximo: "+str(angle)
+##arcpy.AddMessage(mess)
+##print(arcpy.GetMessage(message_count - 1))
+##print mess
 
-mess = "Aspect: "+str(aspect)
-arcpy.AddMessage(mess)
-print(arcpy.GetMessage(message_count - 1))
-print mess
+##mess = "Aspect: "+str(aspect)
+##arcpy.AddMessage(mess)
+##print(arcpy.GetMessage(message_count - 1))
+##print mess
 
 dirs  = os.listdir( inPath2 )
 baseName = os.path.basename(inPath2)
@@ -158,11 +164,14 @@ arcpy.AddMessage(mess)
 print(arcpy.GetMessage(message_count - 1))
 print mess
 
-exclude = ["_0000_000",
-           "_0000_003",
-           "_0000_006",
-           "_1800_003",
-           "_1800_006","0000"]
+
+
+##exclude = ["_0000_000",
+##           "_0000_003",
+##           "_0000_006",
+##           "_1800_003",
+##           "_1800_006","0000"]
+
 procesados = []
 procesadoT = []
 
@@ -313,19 +322,7 @@ for file in dirs:
 
     ##calcular estadisticas
     ##stat = statChoose
-    statName = "R"+file+statChoose
-    rStat = os.path.join( fpats, statName )
-    meanName = "R"+file+"MEAN"
-    mStat = os.path.join( fpats, meanName )
-    mean.append( mStat)
-    medianName = "R"+file+"MEDIAN"
-    eStat = os.path.join( fpats, medianName )
-    median.append( eStat)
-    majorityName = "R"+file+"MAJORITY"
-    jStat = os.path.join( fpats, majorityName )
-    majority.append( jStat)
-    stdName = "R"+file+"STD"
-    sStat = os.path.join( fpats, stdName )
+    
     mosaics.append( rMosaic)
     mess = "Computando Estaditicas diarias"
     arcpy.AddMessage(mess)
