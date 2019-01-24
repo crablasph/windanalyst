@@ -116,7 +116,7 @@ Now you can see all tools!.
 ![alt text](https://github.com/crablasph/windanalyst/blob/master/images/8_beta_diff.png)
 
 * **Aspect**: Aspect Raster.
-* **Map ALgebra**: Formula.
+* **Map Algebra**: Formula.
 * **BETA**: BETA raster output.
 
 **9. Raster Batch Project**
