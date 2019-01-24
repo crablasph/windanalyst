@@ -33,7 +33,6 @@ Now you can see all tools!.
 
 ![alt text](https://github.com/crablasph/windanalyst/blob/master/images/1_slope_zone.png)
 
-
 * **DEM**: Input raster DEM.
 * **Output GDB**: Output Geodatabse for Slope and Aspect.
 * **slope zone**: Output Slope.
@@ -56,18 +55,32 @@ Now you can see all tools!.
 
 * **Output**: Output Workspace for the data.
 * **Max angle**: Maximun angle for classification.
-* **Aspect**: Aspect Feature class.
+* **Aspect**: Aspect Raster.
 
 **4. Classify Slope Aspect**
 
 
 ![alt text](https://github.com/crablasph/windanalyst/blob/master/images/4_c_slope_aspect.png)
 
+* **Slope Input**: Slope Raster for classfification.
+* **Aspect Input**: Aspect Raster for classfification.
+* **Output GDB**: Geodatabase for Output data.
+* **Slope Classify**: Slope output for classification.
+* **Aspect Selected**: Aspect output for classification.
+* **Reclass field**: Field to reclassify.
+* **Reclassification**: Table to old-new values.
 
 **5. Download GFS data by day**
 
 
 ![alt text](https://github.com/crablasph/windanalyst/blob/master/images/5_dday.png)
+
+* **Download Day**: Date to download.
+* **Output Folder**: Output folder for downloaded data.
+* **FTP**: FTP string URL.
+* **FTP Folder**: Sub- folder on FTP site.
+* **WildCard**: if this string is on file name the script will proceed to download the file.
+* **Exclude**: if this string is on file name the script will not proceed to download the file.
 
 
 **6. Download GFS data by month**
@@ -75,26 +88,41 @@ Now you can see all tools!.
 
 ![alt text](https://github.com/crablasph/windanalyst/blob/master/images/6_dmon.png)
 
+* **Download Day of the Month**: Date to download.
+* **Output Folder**: Output folder for downloaded data.
+* **FTP**: FTP string URL.
+* **FTP Folder**: Sub- folder on FTP site.
+* **WildCard**: if this string is on file name the script will proceed to download the file.
+* **Exclude**: if this string is on file name the script will not proceed to download the file.
 
 **7. Process GFS Wind Data From Downloaded Folder**
 
 
 ![alt text](https://github.com/crablasph/windanalyst/blob/master/images/7_stats.png)
 
+* **Input Folder**: Downloaded folder to process.
+* **Output Folder**: Folder for the output data.
+* **Match**: Match string variable for wgrib2 extraction. See more https://www.cpc.ncep.noaa.gov/products/wesley/wgrib2/.
+* **Delete source**: Boolean. If true the GRIB extracted files will be deleted.
+* **Output SRS**: Spatial reference system for the output mosaic datasets.
+* **Zone**: Zone to clip the data.
+* **BBOX**: Extent to clip the data.
+* **Vel**: Boolean. If true the velocity will be processed.
+* **Exclude**: Strings to be excluded on the file. The hours to exclude on the process on a file.
 
 **8. Beta difference**
 
 
 ![alt text](https://github.com/crablasph/windanalyst/blob/master/images/8_beta_diff.png)
 
+* **Aspect**: Aspect Raster.
+* **Map ALgebra**: Formula.
+* **BETA**: BETA raster output.
 
 **9. Raster Batch Project**
 
 
 ![alt text](https://github.com/crablasph/windanalyst/blob/master/images/9_r_batch_prj.png)
-
-
- 
 
 
 
