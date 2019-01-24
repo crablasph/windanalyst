@@ -1,6 +1,8 @@
 # windanalyst
 ArcGIS Tools to make wind Maps and analyze data
 
+
+#### Download and Install
 Download unzip and rename in C:\windanalyst
 
 All the example data to process the tools are on C:\windanalyst\data
@@ -34,8 +36,8 @@ Now you can see all tools!.
 
 * **DEM**: Input raster DEM.
 * **Output GDB**: Output Geodatabse for Slope and Aspect.
-* **slope zone **: Output Slope.
-* **aspect zone **: Output Aspect.
+* **slope zone**: Output Slope.
+* **aspect zone**: Output Aspect.
 
 
 **2. Create Wind Rose**
@@ -43,12 +45,18 @@ Now you can see all tools!.
 
 ![alt text](https://github.com/crablasph/windanalyst/blob/master/images/2_create_wind_rose.png)
 
+* **Output**: Output Workspace for the data.
+* **Cell size**: A size cell value to generate the constants raster.
+* **Extent**: Bounding Box for the constants rasters.
 
 **3. Select Beta Angle by Wind Rose**
 
 
 ![alt text](https://github.com/crablasph/windanalyst/blob/master/images/3_select_beta_angle_wr.png)
 
+* **Output**: Output Workspace for the data.
+* **Max angle**: Maximun angle for classification.
+* **Aspect**: Aspect Feature class.
 
 **4. Classify Slope Aspect**
 
