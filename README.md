@@ -14,7 +14,7 @@ Now you can see all tools!.
 
 #### Toolbox
 
-Beta difference: Compute the Angle Beta between Wind Velocity and DEM-Aspect. Only works with layers on ArcMap.
+Beta difference: Compute the Angle Beta between Wind Velocity and DEM-Aspect.
 
 Classify Slope Aspect: Generates a Slope-Aspect classification on based parameters.
 
@@ -31,6 +31,12 @@ Raster Batch Project: Project a set of rasters.
 Select Beta Angle by Wind Rose: Given a Wind Rose and Aspect compute the angle Beta.
 
 Select Slope Aspect: Create Slope and Aspect from given DEM.
+
+#### Examples
+
+1. Select Slope Aspect
+![alt text](https://github.com/crablasph/windanalyst/blob/master/images/1_slope_zone.png)
+
 
  
 
