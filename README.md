@@ -12,32 +12,30 @@ Now you can see all tools!.
 
 
 
-#### Toolbox
+#### Tools Descriptions
 
 * **Beta difference**: Compute the Angle Beta between Wind Velocity and DEM-Aspect.
-
 * **Classify Slope Aspect**: Generates a Slope-Aspect classification on based parameters.
-
 * **Create Wind Rose**: Create a set of constants azimuth rasters N, NE, E, SE, S, SW, W, NW.
-
 * **Download GFS data by day**: Download GFS data by day from given NOAA FTP.
-
 * **Download GFS data by month**: Download GFS data by month from given NOAA FTP.
-
 * **Process GFS Wind Data From Downloaded Folder**: Extract Wind data from downloaded GRIB files and compute statistics.
-
 * **Raster Batch Project**: Project a set of rasters.
-
 * **Select Beta Angle by Wind Rose**: Given a Wind Rose and Aspect compute the angle Beta.
+* **Select Slope Aspect**: Create Slope and Aspect from given DEM.
 
-* **Select Slope Aspect*: Create Slope and Aspect from given DEM.
-
-#### Examples
+#### Tools Parameters
 
 **1. Select Slope Aspect**
 
 
 ![alt text](https://github.com/crablasph/windanalyst/blob/master/images/1_slope_zone.png)
+
+
+* **DEM**: Input raster DEM.
+* **Output GDB**: Output Geodatabse for Slope and Aspect.
+* **slope zone **: Output Slope.
+* **aspect zone **: Output Aspect.
 
 
 **2. Create Wind Rose**
